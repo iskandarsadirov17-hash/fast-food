@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISKANDAR-FAST FOOD | Fresh Food. Fast Delivery. — Tashkent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- Loading Overlay -->
+  <div id="pageLoader" class="page-loader" aria-hidden="true">
+    <div class="loader-badge">
+      <svg class="brand-emblem" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="iskGradLoader" x1="6" y1="6" x2="58" y2="58" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#D91E18"/>
+            <stop offset="100%" stop-color="#FF6B00"/>
+          </linearGradient>
+        </defs>
+        <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#iskGradLoader)"/>
+        <path d="M18 44L22 24L32 32L42 24L46 44H18Z" fill="#FFFFFF"/>
+        <circle cx="32" cy="18" r="4" fill="#FFD166"/>
+        <rect x="18" y="47" width="28" height="4" rx="2" fill="#FFFFFF"/>
+      </svg>
+      <span>ISKANDAR</span>
+    </div>
+  </div>
+
+  <!-- Top Promotional Ticker -->
+  <div class="top-promo-bar">
+    <div class="container top-promo-inner">
+      <span>🔥 FREE DELIVERY in Tashkent on orders over <strong>120,000 UZS</strong> — Use code: <code>ISKANDAR20</code> for 20% OFF!</span>
+      <div class="top-promo-meta">
+        <span>📍 Tashkent, Uzbekistan</span>
+        <span>📞 +998 (71) 200-88-99</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Sticky Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-logo" data-nav="home" aria-label="ISKANDAR-FAST FOOD Home">
+        <svg class="brand-emblem" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="iskGradHeader" x1="4" y1="4" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#D91E18"/>
+              <stop offset="100%" stop-color="#FF6B00"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#iskGradHeader)"/>
+          <path d="M17 44L21.5 23L32 31.5L42.5 23L47 44H17Z" fill="#FFFFFF"/>
+          <circle cx="32" cy="17.5" r="4.2" fill="#FFD166"/>
+          <rect x="17" y="47.5" width="30" height="4.2" rx="2.1" fill="#FFFFFF"/>
+        </svg>
+        <div class="brand-text-group">
+          <span class="brand-title">ISKANDAR</span>
+          <span class="brand-subtitle">FAST FOOD • TASHKENT</span>
+        </div>
+      </a>
+
+      <!-- Primary Navigation -->
+      <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active" data-nav="home">Home</a>
+        <div class="nav-dropdown">
+          <a href="#menu" class="nav-link" data-nav="menu">Menu ▾</a>
+          <div class="dropdown-menu">
+            <a href="#menu" data-cat-jump="All">All Menu (35 Items)</a>
+            <a href="#menu" data-cat-jump="Burgers">🍔 Burgers</a>
+            <a href="#menu" data-cat-jump="Pizza">🍕 Pizza</a>
+            <a href="#menu" data-cat-jump="Chicken">🍗 Chicken</a>
+            <a href="#menu" data-cat-jump="Fries">🍟 Fries</a>
+            <a href="#menu" data-cat-jump="Sandwiches">🌯 Sandwiches</a>
+            <a href="#menu" data-cat-jump="Drinks">🥤 Drinks</a>
+            <a href="#menu" data-cat-jump="Desserts">🍰 Desserts</a>
+          </div>
+        </div>
+        <a href="#offers" class="nav-link" data-nav="offers">Special Offers</a>
+        <a href="#locations" class="nav-link" data-nav="locations">Locations</a>
+        <a href="#about" class="nav-link" data-nav="about">About Us</a>
+        <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
+      </nav>
+
+      <!-- Header Utility Actions -->
+      <div class="header-actions">
+        <button type="button" class="icon-btn" id="themeToggleBtn" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+          <span id="themeIcon">🌙</span>
+        </button>
+
+        <button type="button" class="icon-btn" id="wishlistOpenBtn" title="Wishlist" aria-label="Open Wishlist">
+          <span>❤️</span>
+          <span class="badge-count" id="wishlistBadge">0</span>
+        </button>
+
+        <button type="button" class="account-pill-btn" id="accountOpenBtn" aria-label="My Account">
+          <span>👤</span>
+          <span id="headerAccountLabel">My Account</span>
+        </button>
+
+        <button type="button" class="cart-trigger-btn" id="cartOpenBtn" aria-label="Open Shopping Cart">
+          <span>🛒</span>
+          <span class="cart-btn-text">Cart</span>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+
+        <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open Mobile Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Quick Category Strip -->
+    <div class="category-strip">
+      <div class="container category-strip-inner">
+        <button type="button" class="cat-pill active" data-strip-cat="All">All Items</button>
+        <button type="button" class="cat-pill" data-strip-cat="Burgers">Burgers</button>
+        <button type="button" class="cat-pill" data-strip-cat="Pizza">Pizza</button>
+        <button type="button" class="cat-pill" data-strip-cat="Chicken">Chicken</button>
+        <button type="button" class="cat-pill" data-strip-cat="Fries">Fries</button>
+        <button type="button" class="cat-pill" data-strip-cat="Sandwiches">Sandwiches</button>
+        <button type="button" class="cat-pill" data-strip-cat="Drinks">Drinks</button>
+        <button type="button" class="cat-pill" data-strip-cat="Desserts">Desserts</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <svg class="brand-emblem" viewBox="0 0 64 64" fill="none">
+          <rect x="2" y="2" width="60" height="60" rx="16" fill="#D91E18"/>
+          <path d="M17 44L21.5 23L32 31.5L42.5 23L47 44H17Z" fill="#FFFFFF"/>
+          <circle cx="32" cy="17.5" r="4.2" fill="#FFD166"/>
+          <rect x="17" y="47.5" width="30" height="4.2" rx="2.1" fill="#FFFFFF"/>
+        </svg>
+        <div class="brand-text-group">
+          <span class="brand-title">ISKANDAR</span>
+          <span class="brand-subtitle">FRESH FOOD. FAST DELIVERY.</span>
+        </div>
+      </div>
+      <button type="button" class="close-drawer-btn" id="mobileDrawerClose" aria-label="Close Menu">✕</button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="#home" data-mobile-nav="home">🏠 Home</a>
+      <a href="#menu" data-mobile-nav="menu" data-cat-jump="All">🍽️ Full Menu</a>
+      <a href="#menu" data-mobile-nav="menu" data-cat-jump="Burgers">🍔 Burgers</a>
+      <a href="#menu" data-mobile-nav="menu" data-cat-jump="Pizza">🍕 Pizza</a>
+      <a href="#menu" data-mobile-nav="menu" data-cat-jump="Chicken">🍗 Chicken</a>
+      <a href="#menu" data-mobile-nav="menu" data-cat-jump="Fries">🍟 Fries</a>
+      <a href="#menu" data-mobile-nav="menu" data-cat-jump="Sandwiches">🌯 Sandwiches</a>
+      <a href="#menu" data-mobile-nav="menu" data-cat-jump="Drinks">🥤 Drinks</a>
+      <a href="#menu" data-mobile-nav="menu" data-cat-jump="Desserts">🍰 Desserts</a>
+      <a href="#offers" data-mobile-nav="offers">🔥 Special Offers</a>
+      <a href="#about" data-mobile-nav="about">🏆 About Us</a>
+      <a href="#locations" data-mobile-nav="locations">📍 Locations (Tashkent)</a>
+      <a href="#contact" data-mobile-nav="contact">📞 Contact & FAQ</a>
+      <a href="#account" id="mobileAccountLink">👤 My Account</a>
+      <a href="#cart" id="mobileCartLink">🛒 Shopping Cart</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- 1. HERO SECTION -->
+    <section id="home" class="hero-section">
+      <div class="hero-bg-shapes" aria-hidden="true">
+        <span class="floating-badge fb-1">🍔</span>
+        <span class="floating-badge fb-2">🍟</span>
+        <span class="floating-badge fb-3">🍕</span>
+        <span class="floating-badge fb-4">🔥</span>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-brand-pill">
+            <svg class="mini-emblem" viewBox="0 0 64 64" fill="none">
+              <rect x="2" y="2" width="60" height="60" rx="16" fill="#D91E18"/>
+              <path d="M17 44L21.5 23L32 31.5L42.5 23L47 44H17Z" fill="#FFFFFF"/>
+              <circle cx="32" cy="17.5" r="4.2" fill="#FFD166"/>
+              <rect x="17" y="47.5" width="30" height="4.2" rx="2.1" fill="#FFFFFF"/>
+            </svg>
+            <span>ISKANDAR-FAST FOOD • TASHKENT FLAGSHIP</span>
+          </div>
+
+          <h1 class="hero-headline">FRESH FOOD. <span class="text-gradient">FAST DELIVERY.</span></h1>
+          <p class="hero-description">
+            Flame-grilled halal beef burgers, stone-baked artisan pizzas, crispy golden chicken, and ice-cold shakes crafted fresh to order and delivered hot across Tashkent in 30 minutes.
+          </p>
+
+          <div class="hero-cta-row">
+            <a href="#menu" class="btn btn-primary btn-lg" data-nav="menu">Order Now 🚀</a>
+            <a href="#offers" class="btn btn-outline-light btn-lg" data-nav="offers">Explore Deals</a>
+          </div>
+
+          <!-- Live Delivery Address Quick Bar -->
+          <div class="hero-delivery-widget">
+            <label for="heroDistrictSelect">Delivering to Tashkent District:</label>
+            <div class="delivery-widget-controls">
+              <select id="heroDistrictSelect">
+                <option value="Chilonzor">Chilonzor District (Est. 25–30 min)</option>
+                <option value="Yunusobod">Yunusobod District (Est. 25–35 min)</option>
+                <option value="Mirzo Ulugbek">Mirzo Ulugbek District (Est. 20–30 min)</option>
+                <option value="Yakkasaroy">Yakkasaroy District (Est. 20–25 min)</option>
+                <option value="Shayxontohur">Shayxontohur District (Est. 25–35 min)</option>
+                <option value="Sergeli">Sergeli District (Est. 30–40 min)</option>
+              </select>
+              <button type="button" class="btn btn-accent" id="heroSetDistrictBtn">Check Delivery</button>
+            </div>
+            <p class="delivery-status-note" id="heroDeliveryNote">✅ Active Kitchen: ISKANDAR Chilonzor • Standard Fee: 12,000 UZS (Free over 120,000 UZS)</p>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-offer-badge">
+            <span class="offer-tag">HOT DEAL</span>
+            <strong>-20% OFF</strong>
+            <span>Code: ISKANDAR20</span>
+          </div>
+          <div class="hero-image-card">
+            <img
+              src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85"
+              alt="ISKANDAR Signature Double Beef Burger"
+            />
+            <div class="hero-floating-card">
+              <div>
+                <span class="fc-label">Most Ordered Today</span>
+                <strong>ISKANDAR Double Royal Beef</strong>
+              </div>
+              <span class="fc-price">46,000 UZS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SPECIAL OFFERS & COMBO DEALS -->
+    <section id="offers" class="section-block offers-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-eyebrow">EXCLUSIVE COMBOS & PROMOTIONS</span>
+            <h2 class="section-title">ISKANDAR Special Offers</h2>
+          </div>
+          <div class="promo-code-pill">
+            <span>Apply at Checkout:</span>
+            <button type="button" class="copy-code-btn" data-copy-code="ISKANDAR20">ISKANDAR20 (-20%)</button>
+            <button type="button" class="copy-code-btn" data-copy-code="TASHKENT15">TASHKENT15 (-15%)</button>
+          </div>
+        </div>
+
+        <div class="offers-grid" id="offersGrid">
+          <!-- Populated dynamically via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FULL INTERACTIVE MENU (35 PRODUCTS: 25 FOOD + 10 DRINKS) -->
+    <section id="menu" class="section-block menu-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-eyebrow">CRAFTED FRESH TO ORDER</span>
+            <h2 class="section-title">Explore Our Full Menu</h2>
+          </div>
+          <p class="section-subtitle">Customize sizes, patties, extra cheese, and sauces — prices &amp; calories update live.</p>
+        </div>
+
+        <!-- Search, Category, Price & Sort Filter Toolbar -->
+        <div class="menu-toolbar">
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="search" id="menuSearchInput" placeholder="Search burgers, pizza, shawarma, shakes..." aria-label="Search menu items" />
+            <button type="button" id="clearSearchBtn" class="clear-search-btn hidden" aria-label="Clear search">✕</button>
+          </div>
+
+          <div class="filter-controls">
+            <select id="categoryFilterSelect" aria-label="Filter by Category">
+              <option value="All">All Categories (35)</option>
+              <option value="Burgers">Burgers (6)</option>
+              <option value="Pizza">Pizza (4)</option>
+              <option value="Chicken">Chicken (4)</option>
+              <option value="Fries">Fries (2)</option>
+              <option value="Sandwiches">Sandwiches &amp; Wraps (4)</option>
+              <option value="Drinks">Drinks &amp; Shakes (10)</option>
+              <option value="Desserts">Desserts (5)</option>
+            </select>
+
+            <select id="priceFilterSelect" aria-label="Filter by Price">
+              <option value="all">All Prices (UZS)</option>
+              <option value="under20">Under 20,000 UZS</option>
+              <option value="20to45">20,000 – 45,000 UZS</option>
+              <option value="over45">Over 45,000 UZS</option>
+            </select>
+
+            <select id="sortSelect" aria-label="Sort Products">
+              <option value="popular">Sort: Most Popular</option>
+              <option value="rating">Sort: Highest Rated</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+            </select>
+
+            <label class="promo-toggle-chip">
+              <input type="checkbox" id="specialOffersOnlyCheckbox" />
+              <span>🔥 Special Offers Only</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="menu-tabs" id="menuCategoryTabs" role="tablist">
+          <button type="button" class="menu-tab active" data-cat="All">All (35)</button>
+          <button type="button" class="menu-tab" data-cat="Burgers">Burgers</button>
+          <button type="button" class="menu-tab" data-cat="Pizza">Pizza</button>
+          <button type="button" class="menu-tab" data-cat="Chicken">Chicken</button>
+          <button type="button" class="menu-tab" data-cat="Fries">Fries</button>
+          <button type="button" class="menu-tab" data-cat="Sandwiches">Sandwiches</button>
+          <button type="button" class="menu-tab" data-cat="Drinks">Drinks</button>
+          <button type="button" class="menu-tab" data-cat="Desserts">Desserts</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Rendered dynamically via script.js -->
+        </div>
+
+        <div id="emptyMenuState" class="empty-state hidden">
+          <h3>No dishes match your filter</h3>
+          <p>Try clearing your search term or resetting price and category filters.</p>
+          <button type="button" class="btn btn-primary" id="resetFiltersBtn">Reset All Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ABOUT US & CUSTOMER REVIEWS -->
+    <section id="about" class="section-block about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-media">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=85" alt="ISKANDAR-FAST FOOD Kitchen in Tashkent" />
+            <div class="about-stat-badge">
+              <strong>100% HALAL</strong>
+              <span>Certified Fresh Uzbek Beef &amp; Poultry</span>
+            </div>
+          </div>
+          <div class="about-content">
+            <span class="section-eyebrow">ABOUT ISKANDAR-FAST FOOD</span>
+            <h2 class="section-title">International Standards. Tashkent Soul.</h2>
+            <p>
+              Founded in Tashkent, <strong>ISKANDAR-FAST FOOD</strong> combines international quick-service culinary standards with locally sourced, 100% halal prime cuts, farm-fresh vegetables, and signature house sauces.
+            </p>
+            <div class="about-pillars">
+              <div class="pillar-card">
+                <strong>⚡ 30-Minute Dispatch</strong>
+                <p>Six strategically positioned kitchens across Tashkent ensure piping-hot arrival.</p>
+              </div>
+              <div class="pillar-card">
+                <strong>🥩 Never Frozen Patties</strong>
+                <p>100% pure Uzbek beef seared on open flames only after your order is placed.</p>
+              </div>
+              <div class="pillar-card">
+                <strong>🛡️ Sealed Hygiene</strong>
+                <p>Tamper-evident thermal packaging locks in heat, crunch, and freshness.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Customer Reviews -->
+        <div class="reviews-wrapper">
+          <h3 class="subsection-title">What Tashkent Guests Say</h3>
+          <div class="reviews-grid">
+            <article class="review-card">
+              <div class="review-stars">★★★★★ <span>5.0</span></div>
+              <p>"The Double Beef Burger and Cheese Fries arrived in Chilonzor in 24 minutes still sizzling. Easily the best burger delivery in Tashkent!"</p>
+              <div class="reviewer-meta">
+                <strong>Azizbek Karimov</strong>
+                <span>Chilonzor • Verified Order</span>
+              </div>
+            </article>
+            <article class="review-card">
+              <div class="review-stars">★★★★★ <span>5.0</span></div>
+              <p>"Love how I can customize extra sauce, double patties, and exact drink sizes in UZS. The Pepperoni Pizza and Chocolate Milkshake are unmatched."</p>
+              <div class="reviewer-meta">
+                <strong>Madina Rakhimova</strong>
+                <span>Yunusobod • Verified Order</span>
+              </div>
+            </article>
+            <article class="review-card">
+              <div class="review-stars">★★★★★ <span>4.9</span></div>
+              <p>"Super clean packaging, generous chicken strips, and effortless Payme/Uzcard checkout. ISKANDAR-FAST FOOD is our Friday family tradition."</p>
+              <div class="reviewer-meta">
+                <strong>Sardor Tursunov</strong>
+                <span>Mirzo Ulugbek • Verified Order</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. TASHKENT LOCATIONS -->
+    <section id="locations" class="section-block locations-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-eyebrow">6 BRANCHES ACROSS THE CAPITAL</span>
+            <h2 class="section-title">ISKANDAR Locations in Tashkent</h2>
+          </div>
+          <p class="section-subtitle">Select a branch to set your delivery kitchen or open live directions on Google Maps.</p>
+        </div>
+
+        <div class="locations-grid" id="locationsGrid">
+          <!-- Rendered dynamically via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CONTACT, FAQ & NEWSLETTER -->
+    <section id="contact" class="section-block contact-section">
+      <div class="container contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-card">
+          <span class="section-eyebrow">24/7 CUSTOMER CARE</span>
+          <h2 class="section-title">Contact ISKANDAR</h2>
+          <p>Questions about catering, bulk corporate orders, or delivery zones in Tashkent? Send us a message.</p>
+
+          <form id="contactForm" class="styled-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Your Full Name *</label>
+                <input type="text" id="contactName" required placeholder="e.g., Jasur Alimov" />
+              </div>
+              <div class="form-group">
+                <label for="contactPhone">Phone Number *</label>
+                <input type="tel" id="contactPhone" required placeholder="+998 90 123 45 67" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email Address *</label>
+              <input type="email" id="contactEmail" required placeholder="jasur@example.uz" />
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message *</label>
+              <textarea id="contactMessage" rows="4" required placeholder="How can our Tashkent support team help you?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+          </form>
+        </div>
+
+        <!-- FAQ Accordion + Newsletter -->
+        <div class="faq-newsletter-col">
+          <div class="faq-card">
+            <span class="section-eyebrow">QUICK ANSWERS</span>
+            <h3 class="subsection-title">Frequently Asked Questions</h3>
+            <div class="faq-list" id="faqList">
+              <div class="faq-item open">
+                <button type="button" class="faq-question">What are your delivery hours in Tashkent? <span>−</span></button>
+                <div class="faq-answer">All 6 ISKANDAR-FAST FOOD branches in Tashkent operate daily from 09:00 AM to 02:00 AM with express delivery across every district.</div>
+              </div>
+              <div class="faq-item">
+                <button type="button" class="faq-question">How do I get free delivery? <span>+</span></button>
+                <div class="faq-answer">Orders with a subtotal of 120,000 UZS or higher automatically qualify for FREE delivery anywhere in Tashkent.</div>
+              </div>
+              <div class="faq-item">
+                <button type="button" class="faq-question">Which payment methods are supported? <span>+</span></button>
+                <div class="faq-answer">We support Cash on Delivery (UZS), Uzcard / Humo bank cards upon arrival, and instant Online Payment (Payme / Click demo).</div>
+              </div>
+              <div class="faq-item">
+                <button type="button" class="faq-question">Is all ISKANDAR meat 100% Halal? <span>+</span></button>
+                <div class="faq-answer">Yes! Every beef patty, chicken fillet, pepperoni slice, and shawarma cut is 100% Halal certified.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="newsletter-card">
+            <h3>Join the ISKANDAR VIP Club</h3>
+            <p>Get weekly Tashkent promo codes and free dessert vouchers straight to your inbox.</p>
+            <form id="newsletterForm" class="newsletter-form">
+              <input type="email" id="newsletterEmail" required placeholder="Enter your email address..." />
+              <button type="submit" class="btn btn-accent">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <a href="#home" class="brand-logo footer-logo" data-nav="home">
+          <svg class="brand-emblem" viewBox="0 0 64 64" fill="none">
+            <rect x="2" y="2" width="60" height="60" rx="16" fill="#D91E18"/>
+            <path d="M17 44L21.5 23L32 31.5L42.5 23L47 44H17Z" fill="#FFFFFF"/>
+            <circle cx="32" cy="17.5" r="4.2" fill="#FFD166"/>
+            <rect x="17" y="47.5" width="30" height="4.2" rx="2.1" fill="#FFFFFF"/>
+          </svg>
+          <div class="brand-text-group">
+            <span class="brand-title">ISKANDAR</span>
+            <span class="brand-subtitle">FRESH FOOD. FAST DELIVERY.</span>
+          </div>
+        </a>
+        <p class="footer-desc">
+          Premium fast food delivery in Tashkent, Uzbekistan. Fresh ingredients, bold flame-grilled flavors, and rapid doorstep service.
+        </p>
+        <div class="social-links">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+          <a href="https://t.me" target="_blank" rel="noopener noreferrer" aria-label="Telegram">Telegram</a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YouTube</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Menu Categories</h4>
+        <ul class="footer-links">
+          <li><a href="#menu" data-cat-jump="Burgers">Burgers</a></li>
+          <li><a href="#menu" data-cat-jump="Pizza">Stone-Baked Pizza</a></li>
+          <li><a href="#menu" data-cat-jump="Chicken">Crispy Chicken</a></li>
+          <li><a href="#menu" data-cat-jump="Fries">Golden Fries</a></li>
+          <li><a href="#menu" data-cat-jump="Sandwiches">Sandwiches &amp; Shawarma</a></li>
+          <li><a href="#menu" data-cat-jump="Drinks">Drinks &amp; Milkshakes</a></li>
+          <li><a href="#menu" data-cat-jump="Desserts">Desserts</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Tashkent Branches</h4>
+        <ul class="footer-links">
+          <li><a href="#locations">Chilonzor Branch</a></li>
+          <li><a href="#locations">Yunusobod Branch</a></li>
+          <li><a href="#locations">Mirzo Ulugbek Branch</a></li>
+          <li><a href="#locations">Sergeli Branch</a></li>
+          <li><a href="#locations">Yakkasaroy Branch</a></li>
+          <li><a href="#locations">Shayxontohur Branch</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact &amp; Hours</h4>
+        <ul class="footer-links">
+          <li>📞 +998 (71) 200-88-99</li>
+          <li>✉️ order@iskandarfastfood.uz</li>
+          <li>📍 Amir Temur Ave 108, Tashkent</li>
+          <li>🕒 Daily: 09:00 – 02:00</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>© 2026 ISKANDAR-FAST FOOD. All Rights Reserved. Tashkent, Uzbekistan.</span>
+        <span>Demo Platform • Simulated Online Ordering &amp; Delivery</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SLIDE-OVER SHOPPING CART DRAWER -->
+  <div class="overlay-backdrop" id="backdrop"></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div>
+        <h3>Your Order Cart</h3>
+        <span class="drawer-subtitle" id="cartItemCountLabel">0 items</span>
+      </div>
+      <div class="drawer-header-actions">
+        <button type="button" class="text-danger-btn" id="clearCartBtn">Clear All</button>
+        <button type="button" class="close-drawer-btn" id="cartCloseBtn" aria-label="Close Cart">✕</button>
+      </div>
+    </div>
+
+    <div class="cart-items-list" id="cartItemsList">
+      <!-- Populated dynamically -->
+    </div>
+
+    <div class="cart-footer" id="cartFooter">
+      <!-- Promo Code Input -->
+      <div class="cart-promo-row">
+        <input type="text" id="cartPromoInput" placeholder="Promo code (e.g. ISKANDAR20)" />
+        <button type="button" class="btn btn-dark" id="applyPromoBtn">Apply</button>
+      </div>
+      <p class="promo-feedback" id="promoFeedback"></p>
+
+      <div class="cart-totals">
+        <div class="total-row">
+          <span>Total Energy</span>
+          <strong id="cartTotalCalories">0 kcal</strong>
+        </div>
+        <div class="total-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">0 UZS</span>
+        </div>
+        <div class="total-row">
+          <span>Delivery Fee (<span id="cartDistrictName">Chilonzor</span>)</span>
+          <span id="cartDeliveryFee">0 UZS</span>
+        </div>
+        <div class="total-row discount-row hidden" id="cartDiscountRow">
+          <span>Discount</span>
+          <span id="cartDiscountAmount">-0 UZS</span>
+        </div>
+        <div class="total-row grand-total">
+          <span>Total Payable</span>
+          <strong id="cartGrandTotal">0 UZS</strong>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary btn-block btn-lg" id="proceedCheckoutBtn">
+        Proceed to Checkout →
+      </button>
+    </div>
+  </aside>
+
+  <!-- WISHLIST MODAL -->
+  <div class="modal-dialog" id="wishlistModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>❤️ Saved Favorites</h3>
+        <button type="button" class="close-drawer-btn" data-close-modal="wishlistModal">✕</button>
+      </div>
+      <div class="modal-body" id="wishlistBody"></div>
+    </div>
+  </div>
+
+  <!-- PRODUCT DETAILS & CUSTOMIZATION MODAL -->
+  <div class="modal-dialog" id="productModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-box modal-lg">
+      <div class="modal-header">
+        <h3 id="pmTitle">Customize Item</h3>
+        <button type="button" class="close-drawer-btn" data-close-modal="productModal">✕</button>
+      </div>
+      <div class="modal-body" id="productModalBody"></div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT & ORDER CONFIRMATION MODAL -->
+  <div class="modal-dialog" id="checkoutModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-box modal-xl">
+      <div class="modal-header">
+        <div class="brand-logo">
+          <svg class="brand-emblem" viewBox="0 0 64 64" fill="none">
+            <rect x="2" y="2" width="60" height="60" rx="16" fill="#D91E18"/>
+            <path d="M17 44L21.5 23L32 31.5L42.5 23L47 44H17Z" fill="#FFFFFF"/>
+            <circle cx="32" cy="17.5" r="4.2" fill="#FFD166"/>
+            <rect x="17" y="47.5" width="30" height="4.2" rx="2.1" fill="#FFFFFF"/>
+          </svg>
+          <div class="brand-text-group">
+            <span class="brand-title">ISKANDAR</span>
+            <span class="brand-subtitle">SECURE CHECKOUT • TASHKENT</span>
+          </div>
+        </div>
+        <button type="button" class="close-drawer-btn" data-close-modal="checkoutModal">✕</button>
+      </div>
+
+      <div class="modal-body" id="checkoutModalBody">
+        <div class="checkout-layout" id="checkoutFormContainer">
+          <!-- Left: Customer & Delivery Form -->
+          <form id="checkoutForm" class="styled-form" novalidate>
+            <h4>1. Customer &amp; Delivery Details</h4>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="coName">Full Name *</label>
+                <input type="text" id="coName" required placeholder="Alisher Usmanov" />
+              </div>
+              <div class="form-group">
+                <label for="coPhone">Phone Number (Uzbekistan) *</label>
+                <input type="tel" id="coPhone" required placeholder="+998 90 123 45 67" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="coEmail">Email Address *</label>
+                <input type="email" id="coEmail" required placeholder="alisher@mail.uz" />
+              </div>
+              <div class="form-group">
+                <label for="coCity">City *</label>
+                <input type="text" id="coCity" value="Tashkent" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="coBranch">Tashkent Delivery District / Branch *</label>
+                <select id="coBranch" required>
+                  <option value="Chilonzor">Chilonzor Branch (12,000 UZS)</option>
+                  <option value="Yunusobod">Yunusobod Branch (12,000 UZS)</option>
+                  <option value="Mirzo Ulugbek">Mirzo Ulugbek Branch (12,000 UZS)</option>
+                  <option value="Yakkasaroy">Yakkasaroy Branch (10,000 UZS)</option>
+                  <option value="Shayxontohur">Shayxontohur Branch (12,000 UZS)</option>
+                  <option value="Sergeli">Sergeli Branch (15,000 UZS)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="coAddress">Street, Building &amp; Apartment *</label>
+                <input type="text" id="coAddress" required placeholder="e.g., Bunyodkor Ave 15, Apt 42" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="coNotes">Delivery Instructions (Optional)</label>
+              <input type="text" id="coNotes" placeholder="Door code, landmark, or extra napkins..." />
+            </div>
+
+            <h4>2. Select Payment Method</h4>
+            <div class="payment-methods-grid">
+              <label class="payment-option-card">
+                <input type="radio" name="paymentMethod" value="Cash on Delivery" checked />
+                <div class="po-content">
+                  <strong>💵 Cash on Delivery</strong>
+                  <span>Pay in UZS upon doorstep arrival</span>
+                </div>
+              </label>
+
+              <label class="payment-option-card">
+                <input type="radio" name="paymentMethod" value="Bank Card (Uzcard / Humo)" />
+                <div class="po-content">
+                  <strong>💳 Bank Card (Uzcard / Humo)</strong>
+                  <span>Mobile POS terminal at your door</span>
+                </div>
+              </label>
+
+              <label class="payment-option-card">
+                <input type="radio" name="paymentMethod" value="Online Payment (Payme / Click)" />
+                <div class="po-content">
+                  <strong>📱 Online Payment</strong>
+                  <span>Simulated Payme / Click confirmation</span>
+                </div>
+              </label>
+            </div>
+            <p class="security-disclaimer">🔒 Demonstration Checkout: No real bank card numbers or CVV codes are collected or processed.</p>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Confirm Order &amp; Pay</button>
+          </form>
+
+          <!-- Right: Order Summary -->
+          <div class="checkout-summary-box">
+            <h4>Order Summary</h4>
+            <div id="checkoutItemsSummary" class="co-items-list"></div>
+            <div class="co-totals-list" id="checkoutTotalsSummary"></div>
+          </div>
+        </div>
+
+        <!-- Order Confirmation & Live Demo Tracker Screen -->
+        <div id="orderConfirmationView" class="order-confirmation hidden"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- USER ACCOUNT (LOGIN / REGISTER / PROFILE / ORDER HISTORY) MODAL -->
+  <div class="modal-dialog" id="accountModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-box modal-lg">
+      <div class="modal-header">
+        <h3>👤 ISKANDAR Account Portal</h3>
+        <button type="button" class="close-drawer-btn" data-close-modal="accountModal">✕</button>
+      </div>
+      <div class="modal-body" id="accountModalBody">
+        <!-- Rendered dynamically via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button type="button" id="backToTopBtn" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="./app.js"></script>
+</body>
+</html>
